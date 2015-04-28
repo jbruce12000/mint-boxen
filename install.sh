@@ -19,7 +19,7 @@ fi
 # Download uboxen code
 sudo apt-get install -y git 
 cd /opt
-if [ -d /opt/mint-boxen] ; then
+if [ -d /opt/mint-boxen ] ; then
   echo "OK, mint-boxen already installed...skipping clone"
 else 
   echo "OK, cloning mint-boxen to /opt/mint-boxen"
