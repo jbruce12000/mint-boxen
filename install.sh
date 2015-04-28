@@ -3,7 +3,7 @@
 echo "This script requires root privileges, you will be asked your sudo password"
 
 # Setup PuppetLabs repository
-DISTRO=$(grep ppa /etc/apt/sources.list |grep main |head -1|cut -d " " -f 3)
+DISTRO=$(grep DISTRIB_CODENAME /etc/upstream-release/lsb-release|sed 's/.*=//')
 wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb
 sudo dpkg -i puppetlabs-release-$DISTRO.deb
 sudo apt-get update -y -q
