@@ -4,9 +4,15 @@ echo "This script requires root privileges, you will be asked your sudo password
 
 # Setup PuppetLabs repository
 DISTRO=$(grep DISTRIB_CODENAME /etc/upstream-release/lsb-release|sed 's/.*=//')
-wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb
-sudo dpkg -i puppetlabs-release-$DISTRO.deb
-sudo apt-get update -y -q
+echo "Distro appears to be $DISTRO..."
+if ! dpkg -l puppetlabs-release ; then
+  echo "Grabbing puppet release..."
+  wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb
+  sudo dpkg -i puppetlabs-release-$DISTRO.deb
+  sudo apt-get update -y -q
+else
+  echo "puppet release already installed, skipping"
+fi
 
 # Install puppet without the agent init script
 sudo apt-get install git puppet-common hiera -y -q
