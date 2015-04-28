@@ -16,22 +16,28 @@ else
   echo "OK puppet release $PUPPET_RELEASE already installed, skipping"
 fi
 
-# Install puppet without the agent init script
-sudo apt-get install git puppet-common hiera -y -q
+# Download uboxen code
+sudo apt-get install -y git 
+cd /opt
+if [ -d /opt/mint-boxen] ; then
+  echo "OK, mint-boxen already installed...skipping clone"
+else 
+  echo "OK, cloning mint-boxen to /opt/mint-boxen"
+  sudo git clone https://github.com/jbruce12000/mint-boxen.git
+fi 
 
 # Get r10k
-if gem list|grep r10k; then
+if sudo gem list|grep r10k; then
   echo "OK skipping gem install r10k"
 else
   echo "OK installing r10k"
   sudo gem install r10k 
 fi
 
-# Download uboxen code
-cd /opt
-[ ! -d /opt/mint-boxen ] && sudo git clone https://github.com/jbruce12000/mint-boxen.git
+# bring system up to date
 cd /opt/mint-boxen
 r10k puppetfile install
+sudo apt-get install -y puppet-common hiera
 sudo puppet apply install.pp
 
 # Finish
