@@ -20,7 +20,7 @@ fi
 sudo apt-get install git puppet-common hiera -y -q
 
 # Get r10k
-if gem list |grep r10k ; then
+if gem list|grep r10k; then
   echo "OK skipping gem install r10k"
 else
   echo "OK installing r10k"
