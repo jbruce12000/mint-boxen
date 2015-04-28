@@ -8,5 +8,5 @@ Look at [the original Boxen](http://boxen.github.com/) to understand what it is 
 
 Setup
 -----
-    wget -O- -q https://raw.github.com/jbruce12000/mint-boxen/master/install.sh | /bin/bash
+    sudo wget -O- -q https://raw.github.com/jbruce12000/mint-boxen/master/install.sh | /bin/bash
 
