@@ -10,6 +10,7 @@ if ! dpkg -l puppetlabs-release ; then
   wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb
   sudo dpkg -i puppetlabs-release-$DISTRO.deb
   sudo apt-get update -y -q
+  rm -f puppetlabs-release-$DISTRO.deb 2>/dev/null
 else
   echo "puppet release already installed, skipping"
 fi
