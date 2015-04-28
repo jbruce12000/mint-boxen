@@ -50,8 +50,8 @@ sudo puppet apply install.pp
 # main
 #--------------------------------------------------------------------------
 sudo apt-get install -y git puppet-common hiera
-install_puppet_release()
-install_r10k()
-install_uboxen_code()
-run_puppet()
+install_puppet_release
+install_r10k
+install_uboxen_code
+run_puppet
 echo -e "\n\nDone. Run 'uboxen' at your shell prompt in the future."
