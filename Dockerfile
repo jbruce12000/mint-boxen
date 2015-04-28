@@ -17,6 +17,6 @@ RUN apt-get upgrade -y
 RUN apt-get install puppet-common=2.7.25-1puppetlabs1 git sudo -y -q
 
 # Install the app
-RUN cd /opt && git clone https://github.com/jbruce12000/ubuntu-boxen.git
-RUN ln -s /opt/ubuntu-boxen/uboxen /usr/local/bin/uboxen
-RUN /opt/ubuntu-boxen/uboxen 
+RUN cd /opt && git clone https://github.com/jbruce12000/mint-boxen.git
+RUN ln -s /opt/mint-boxen/uboxen /usr/local/bin/uboxen
+RUN /opt/mint-boxen/uboxen 

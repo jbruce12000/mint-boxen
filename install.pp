@@ -3,14 +3,14 @@
 file { 
   '/usr/local/bin/uboxen':
     ensure => link,
-    target => '/opt/ubuntu-boxen/uboxen';
+    target => '/opt/mint-boxen/uboxen';
   '/etc/puppet/manifests/site.pp':
     ensure => link,
-    target => '/opt/ubuntu-boxen/uboxen.pp';
+    target => '/opt/mint-boxen/uboxen.pp';
   '/etc/puppet/modules':
     ensure => link,
-    target => '/opt/ubuntu-boxen/modules';
+    target => '/opt/mint-boxen/modules';
   '/var/lib/hiera':
     ensure => link,
-    target => '/opt/ubuntu-boxen/data';
+    target => '/opt/mint-boxen/data';
 }

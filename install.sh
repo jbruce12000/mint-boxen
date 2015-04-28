@@ -29,8 +29,8 @@ fi
 
 # Download uboxen code
 cd /opt
-[ ! -d /opt/ubuntu-boxen ] && sudo git clone https://github.com/jbruce12000/ubuntu-boxen.git
-cd /opt/ubuntu-boxen
+[ ! -d /opt/mint-boxen ] && sudo git clone https://github.com/jbruce12000/mint-boxen.git
+cd /opt/mint-boxen
 r10k puppetfile install
 sudo puppet apply install.pp
 
