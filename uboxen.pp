@@ -157,7 +157,6 @@ node generic_host {
   # General DEFAULTS
   Exec { path => "/usr/bin:/usr/sbin/:/bin:/sbin" }
 
-  include etckeeper
   include apt
 
   # Common utilities

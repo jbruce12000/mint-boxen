@@ -1,15 +1,7 @@
 #!/bin/bash
 
-# support for etckeeper
-function etckeep()
-{
-  MSG=$1
-  [ -x /usr/bin/etckeeper ] && sudo etckeeper commit "$MSG"
-}
-
 #MYPATH=$(dirname $0)
 
-etckeep "Before uBoxen run"
 cd /opt/ubuntu-boxen && r10k puppetfile install
 #sudo puppet apply $MYPATH/uboxen.pp
 sudo puppet apply /etc/puppet/manifests/site.pp
