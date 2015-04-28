@@ -452,9 +452,9 @@ class desktop::proxy(
 
 node default inherits generic_desktop {
 
-  $unix_user = 'lorello'
+  $unix_user = 'jbruce'
   $unix_home = "/home/${unix_user}"
-  $email     = 'lorenzo.salvadorini@softecspa.it'
+  $email     = 'jbruce12000@gmail.com'
 
   file { "$unix_home/.xprofile" :
     content => "SYSRESOURCES=/etc/X11/Xresources\nUSRRESOURCES=\$HOME/.Xresources\n",
