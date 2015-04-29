@@ -13,6 +13,7 @@ fi
 
 #--------------------------------------------------------------------------
 function install_puppet_release() {
+sudo apt-get install -y git puppet-common
 DISTRO=$(grep DISTRIB_CODENAME /etc/upstream-release/lsb-release|sed 's/.*=//')
 echo "Distro appears to be $DISTRO..."
 PUPPET_RELEASE="puppetlabs-release-$DISTRO.deb"
@@ -20,7 +21,6 @@ if ! dpkg -l puppetlabs-release ; then
   echo "OK Grabbing puppet release $PUPPET_RELEASE..."
   wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb
   sudo dpkg -i puppetlabs-release-$DISTRO.deb
-  sudo apt-get update -y -q
   rm -f puppetlabs-release-$DISTRO.deb 2>/dev/null
 else
   echo "OK puppet release $PUPPET_RELEASE already installed, skipping"
@@ -42,15 +42,12 @@ fi
 function run_puppet() {
 cd /opt/mint-boxen
 r10k puppetfile install
-sudo apt-get install -y puppet-common hiera
 sudo puppet apply install.pp
 }
-
 
 #--------------------------------------------------------------------------
 # main
 #--------------------------------------------------------------------------
-sudo apt-get install -y git puppet-common hiera
 install_puppet_release
 install_r10k
 install_uboxen_code
