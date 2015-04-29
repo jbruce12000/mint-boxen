@@ -2,7 +2,7 @@
 
 #--------------------------------------------------------------------------
 function install_r10k() {
-sudo apt-get install -y ruby rubygems
+sudo apt-get install -y ruby
 if sudo gem list|grep r10k; then
   echo "OK skipping gem install r10k"
 else
