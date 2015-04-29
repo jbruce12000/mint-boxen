@@ -14,7 +14,7 @@ fi
 function install_puppet_release() {
 DISTRO=$(grep DISTRIB_CODENAME /etc/upstream-release/lsb-release|sed 's/.*=//')
 echo "Distro appears to be $DISTRO..."
-PUPPET_RELEASE=$(puppetlabs-release-$DISTRO.deb)
+PUPPET_RELEASE="puppetlabs-release-$DISTRO.deb"
 if ! dpkg -l puppetlabs-release ; then
   echo "OK Grabbing puppet release $PUPPET_RELEASE..."
   wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb
