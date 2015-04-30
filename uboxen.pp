@@ -192,7 +192,6 @@ node generic_desktop inherits generic_host {
   apt::source { 'canonical-partner':
     location  => 'http://archive.canonical.com/ubuntu',
     repos     => 'partner',
-    src       => true
   }
 
   # Google
