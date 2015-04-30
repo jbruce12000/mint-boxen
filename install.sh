@@ -15,17 +15,7 @@ fi
 
 #--------------------------------------------------------------------------
 function install_puppet_release() {
-sudo apt-get install -y git puppet-common
-DISTRO=$(grep DISTRIB_CODENAME /etc/upstream-release/lsb-release|sed 's/.*=//')
-echo "Distro appears to be $DISTRO..."
-PUPPET_RELEASE="puppetlabs-release-$DISTRO.deb"
-if ! dpkg -l puppetlabs-release ; then
-  echo "OK Grabbing puppet release $PUPPET_RELEASE..."
-  wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb -O puppetlabs-release-$DISTRO.deb
-  sudo dpkg -i puppetlabs-release-$DISTRO.deb
-else
-  echo "OK puppet release $PUPPET_RELEASE already installed, skipping"
-fi
+sudo apt-get install -y git puppet-common puppetlabs-release
 }
 
 #--------------------------------------------------------------------------
