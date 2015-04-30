@@ -14,4 +14,7 @@ file {
   '/var/lib/hiera':
     ensure => link,
     target => '/opt/mint-boxen/data';
+  '/etc/puppet/hira.yaml':
+    ensure => link,
+    target => '/opt/mint-boxen/hiera.yaml';
 }
