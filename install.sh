@@ -36,6 +36,7 @@ if [ -d /opt/mint-boxen ] ; then
 else
   echo "OK, cloning mint-boxen to /opt/mint-boxen"
   sudo git clone https://github.com/jbruce12000/mint-boxen.git
+  exec /opt/mint-boxen/install.sh
 fi
 }
 
@@ -49,8 +50,8 @@ sudo puppet apply install.pp
 #--------------------------------------------------------------------------
 # main
 #--------------------------------------------------------------------------
+install_uboxen_code
 install_puppet_release
 install_r10k
-install_uboxen_code
 run_puppet
 echo -e "\n\nDone. Run 'uboxen' at your shell prompt in the future."
