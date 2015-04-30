@@ -183,7 +183,6 @@ node generic_desktop inherits generic_host {
     ensure => 'present',
   }
 
-  include docker
   include vagrant
 
   package { 'skype':
