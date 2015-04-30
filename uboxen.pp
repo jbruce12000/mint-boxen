@@ -192,7 +192,7 @@ node generic_desktop inherits generic_host {
   apt::source { 'canonical-partner':
     location  => 'http://archive.canonical.com/ubuntu',
     repos     => 'partner',
-    include_src       => true
+    src       => true
   }
 
   # Google
@@ -200,13 +200,11 @@ node generic_desktop inherits generic_host {
     location  	=> 'http://dl.google.com/linux/chrome/deb/',
     release   	=> 'stable',
     key           => '7FAC5991',
-    include_src   => false,
   }
   apt::source { 'google-talkplugin':
     location  	=> 'http://dl.google.com/linux/talkplugin/deb/',
     release   	=> 'stable',
     key           => '7FAC5991',
-    include_src   => false,
   }
 
   package { 'gedit':          ensure => latest }
