@@ -18,3 +18,5 @@ mod 'nodes/php'
 mod 'fsalum/redis'
 mod 'puppetlabs/nodejs'
 mod 'maestrodev/wget'
+mod 'vim',
+  :git => "git://github.com/lorello/puppet-vim.git"
