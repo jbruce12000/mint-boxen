@@ -9,6 +9,7 @@ file {
     target => '/opt/mint-boxen/uboxen.pp';
   '/etc/puppet/modules':
     ensure => link,
+    force => true,
     target => '/opt/mint-boxen/modules';
   '/var/lib/hiera':
     ensure => link,
