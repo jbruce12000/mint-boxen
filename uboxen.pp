@@ -333,10 +333,6 @@ node default inherits generic_desktop {
     groups => [ 'adm', 'sudo', 'wheel' ],
   }
 
-  class { 'homeshick':
-    username => $unix_user,
-  }
-
   class { 'vim':
     user	=> $unix_user,
     home_dir => $unix_home,
