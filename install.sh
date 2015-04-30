@@ -21,9 +21,8 @@ echo "Distro appears to be $DISTRO..."
 PUPPET_RELEASE="puppetlabs-release-$DISTRO.deb"
 if ! dpkg -l puppetlabs-release ; then
   echo "OK Grabbing puppet release $PUPPET_RELEASE..."
-  wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb
+  wget -q https://apt.puppetlabs.com/puppetlabs-release-$DISTRO.deb -O puppetlabs-release-$DISTRO.deb
   sudo dpkg -i puppetlabs-release-$DISTRO.deb
-  rm -f puppetlabs-release-$DISTRO.deb 2>/dev/null
 else
   echo "OK puppet release $PUPPET_RELEASE already installed, skipping"
 fi
