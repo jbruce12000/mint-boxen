@@ -416,13 +416,6 @@ node default inherits generic_desktop {
   # picasa
   package { [ 'wine', 'winetricks']:  ensure => latest }
 
-
-  # mongodb
-  class {'::mongodb::globals':
-      manage_package_repo => true,
-  }->
-  class {'::mongodb::server': }
-
   # mongo single page app manager
   package { 'genghisapp':
     provider => gem,
