@@ -16,6 +16,7 @@ node generic_host {
     'ack-grep',
     'curl',
     'fdupes',
+    'google-chrome-stable',
     'ipcalc',
     'ngrep',
     'nmap',
@@ -26,7 +27,6 @@ node generic_host {
   ]
   package { $common_packages : ensure => latest }
 }
-
 
 # java
 #http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html
@@ -41,13 +41,12 @@ node generic_host {
 #   sudo apt-get update
 #  sudo aptitude install google-chrome-stable
 
-apt::source { 'google_chrome':
-  comment    => 'google chrome stable repo',
-  location   => 'http://dl.google.com/linux/chrome/deb/',
-  release    => 'stable',
-  key        => {
-    source   => 'https://dl-ssl.google.com/linux/linux_signing_key.pub',
-  },
+apt::source { 'google-chrome-stable':
+  comment  => 'google chrome stable repo',
+  location => 'http://dl.google.com/linux/chrome/deb/',
+  release  => 'stable',
+  key      => '7FAC5991',
+  notify   => Package ['google-chrome-stable'],
 }
 
 node generic_desktop inherits generic_host {
