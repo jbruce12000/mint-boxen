@@ -35,6 +35,31 @@ node generic_host {
 # hipchat
 # mumble
 
+# chrome
+#   sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+#   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+#   sudo apt-get update
+#  sudo aptitude install google-chrome-stable
+
+include 'google_chrome'
+
+#apt::source { 'google_chrome':
+#  comment    => 'This is google chrome stable repo',
+#  location   => 'http://dl.google.com/linux/chrome/deb/',
+#  release    => 'stable',
+#  repos      => 'main',
+#  key        => {
+#    ensure   => present,
+#    source   => 'https://dl-ssl.google.com/linux/linux_signing_key.pub',
+#  },
+#  include    => {
+#    'deb' => true,
+#  },
+#}
+
+package { 'google-chrome-stable',
+  require => 
+  
 
 
 node generic_desktop inherits generic_host {
