@@ -71,16 +71,16 @@ node generic_desktop inherits generic_host {
   }
 
   # Google
-  apt::source { 'google-chrome':
-    location  	=> 'http://dl.google.com/linux/chrome/deb/',
-    release   	=> 'stable',
-    key           => '7FAC5991',
-  }
-  apt::source { 'google-talkplugin':
-    location  	=> 'http://dl.google.com/linux/talkplugin/deb/',
-    release   	=> 'stable',
-    key           => '7FAC5991',
-  }
+  #apt::source { 'google-chrome':
+  #  location  	=> 'http://dl.google.com/linux/chrome/deb/',
+  #  release   	=> 'stable',
+  #  key           => '7FAC5991',
+  #}
+  #apt::source { 'google-talkplugin':
+  #  location  	=> 'http://dl.google.com/linux/talkplugin/deb/',
+  #  release   	=> 'stable',
+  #  key           => '7FAC5991',
+  #}
 }
 
 
