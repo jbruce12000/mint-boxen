@@ -57,11 +57,6 @@ include 'google_chrome'
 #  },
 #}
 
-package { 'google-chrome-stable',
-  require => 
-  
-
-
 node generic_desktop inherits generic_host {
 
   include vagrant
