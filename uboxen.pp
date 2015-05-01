@@ -41,21 +41,14 @@ node generic_host {
 #   sudo apt-get update
 #  sudo aptitude install google-chrome-stable
 
-include 'google_chrome'
-
-#apt::source { 'google_chrome':
-#  comment    => 'This is google chrome stable repo',
-#  location   => 'http://dl.google.com/linux/chrome/deb/',
-#  release    => 'stable',
-#  repos      => 'main',
-#  key        => {
-#    ensure   => present,
-#    source   => 'https://dl-ssl.google.com/linux/linux_signing_key.pub',
-#  },
-#  include    => {
-#    'deb' => true,
-#  },
-#}
+apt::source { 'google_chrome':
+  comment    => 'google chrome stable repo',
+  location   => 'http://dl.google.com/linux/chrome/deb/',
+  release    => 'stable',
+  key        => {
+    source   => 'https://dl-ssl.google.com/linux/linux_signing_key.pub',
+  },
+}
 
 node generic_desktop inherits generic_host {
 

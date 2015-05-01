@@ -15,6 +15,5 @@ mod 'puppetlabs/git'
 mod 'nodes/php'
 mod 'puppetlabs/nodejs'
 mod 'maestrodev/wget'
-mod 'jamesnetherton/google_chrome'
 mod 'vim',
   :git => "git://github.com/lorello/puppet-vim.git"
